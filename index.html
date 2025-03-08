@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Battle</title>
+
+    <!-- Google Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="grey lighten-4">
+
+    <div class="container center-align">
+        <h1 class="blue-text text-darken-2">Meme Battle Arena</h1>
+
+        <!-- User Authentication -->
+        <div id="auth" class="card-panel white z-depth-3">
+            <h4>Login</h4>
+            <div class="input-field">
+                <input type="email" id="login-email" placeholder="Email">
+            </div>
+            <div class="input-field">
+                <input type="password" id="login-password" placeholder="Password">
+            </div>
+            <button class="btn waves-effect waves-light blue" onclick="loginUser()">Login</button>
+
+            <h4>Register</h4>
+            <div class="input-field">
+                <input type="text" id="register-name" placeholder="Name">
+            </div>
+            <div class="input-field">
+                <input type="email" id="register-email" placeholder="Email">
+            </div>
+            <div class="input-field">
+                <input type="password" id="register-password" placeholder="Password">
+            </div>
+            <button class="btn waves-effect waves-light green" onclick="registerUser()">Register</button>
+        </div>
+
+        <!-- Logout Button (Hidden by Default) -->
+        <button id="logout-button" class="btn red darken-1" style="display:none;" onclick="logoutUser()">Logout</button>
+
+        <!-- Meme Creation -->
+        <h2 class="black-text">Add a New Meme</h2>
+        <div id="meme-form" class="card-panel white z-depth-2">
+            <div class="input-field">
+                <input type="text" id="meme-title" placeholder="Title">
+            </div>
+            <div class="input-field">
+                <input type="text" id="meme-url" placeholder="Image URL">
+            </div>
+            <div class="input-field">
+                <input type="text" id="meme-description" placeholder="Description">
+            </div>
+            <button class="btn waves-effect waves-light blue darken-2" onclick="addMeme()">Add Meme</button>
+        </div>
+
+        <!-- Meme List -->
+        <h2 class="black-text">All Memes</h2>
+        <div id="meme-list" class="row"></div>
+
+        <!-- Meme Battle -->
+        <h2 class="black-text">Meme Battle</h2>
+        <button class="btn blue" onclick="fetchBattleMemes()">Start Battle</button>
+        <button class="btn grey darken-2" onclick="fetchBattleMemes()">Retry Battle</button> <!-- Retry Button -->
+        <div id="battle-container" class="row"></div>
+    </div>
+
+    <!-- Materialize JS (For Button Effects) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

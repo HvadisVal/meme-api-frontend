@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.meme-card {
+    display: inline-block;
+    background: white;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ddd;
+}
+
+.meme-card img {
+    max-width: 200px;
+    display: block;
+    margin: 10px auto;
+}
