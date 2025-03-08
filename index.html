@@ -57,16 +57,18 @@
             <button class="btn waves-effect waves-light blue darken-2" onclick="addMeme()">Add Meme</button>
         </div>
 
-        <!-- Meme List -->
-        <h2 class="black-text">All Memes</h2>
-        <div id="meme-list" class="row"></div>
+      <!-- Meme List -->
+<h2 class="black-text">All Memes</h2>
+<div id="meme-list" class="row"></div>
 
-        <!-- Meme Battle -->
-        <h2 class="black-text">Meme Battle</h2>
-        <button class="btn blue" onclick="fetchBattleMemes()">Start Battle</button>
-        <button class="btn grey darken-2" onclick="fetchBattleMemes()">Retry Battle</button> <!-- Retry Button -->
-        <div id="battle-container" class="row"></div>
-    </div>
+<!-- Meme Battle -->
+<h2 class="black-text">Meme Battle</h2>
+<div class="row">
+    <button class="btn blue waves-effect waves-light" onclick="fetchBattleMemes()">Start Battle</button>
+    <button class="btn grey darken-2 waves-effect waves-light" onclick="fetchBattleMemes()">Retry Battle</button> <!-- Retry Button -->
+</div>
+<div id="battle-container" class="row"></div>
+
 
     <!-- Materialize JS (For Button Effects) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

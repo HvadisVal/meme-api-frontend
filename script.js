@@ -78,7 +78,7 @@ function logoutUser() {
 }
 
 
-// Fetch All Memes
+// Fetch All Memes 
 async function fetchMemes() {
     const memes = await apiRequest("/memes", "GET");
     let memeList = document.getElementById("meme-list");
@@ -86,19 +86,30 @@ async function fetchMemes() {
 
     memes.forEach(meme => {
         let memeDiv = document.createElement("div");
-        memeDiv.className = "meme-card";
+        memeDiv.className = "col s12 m6 l4"; // 3-column layout on large screens
+
         memeDiv.innerHTML = `
-            <h3>${meme.title}</h3>
-            <img src="${meme.imageUrl}" alt="${meme.title}">
-            <p>${meme.description}</p>
-            <p>Votes: ${meme.votes}</p>
-            <button onclick="voteMeme('${meme._id}')">Vote</button>
-            <button onclick="deleteMeme('${meme._id}')">Delete</button>
-            <button onclick="editMeme('${meme._id}', '${meme.title}', '${meme.imageUrl}', '${meme.description}')">Edit</button>
+            <div class="card">
+                <div class="card-image">
+                    <img src="${meme.imageUrl}" alt="${meme.title}">
+                </div>
+                <div class="card-content">
+                    <span class="card-title">${meme.title}</span>
+                    <p>${meme.description}</p>
+                    <p><strong>Votes:</strong> ${meme.votes}</p>
+                </div>
+                <div class="card-action">
+                    <button class="btn blue waves-effect waves-light" onclick="voteMeme('${meme._id}')">Vote</button>
+                    <button class="btn red waves-effect waves-light" onclick="deleteMeme('${meme._id}')">Delete</button>
+                    <button class="btn grey darken-1 waves-effect waves-light" onclick="editMeme('${meme._id}', '${meme.title}', '${meme.imageUrl}', '${meme.description}')">Edit</button>
+                </div>
+            </div>
         `;
+
         memeList.appendChild(memeDiv);
     });
 }
+
 
 // Fetch Two Random Memes for Battle
 async function fetchBattleMemes() {
@@ -108,14 +119,24 @@ async function fetchBattleMemes() {
 
     battleMemes.forEach(meme => {
         let memeDiv = document.createElement("div");
-        memeDiv.className = "meme-card";
+        memeDiv.className = "col s12 m6 l4"; // Ensures 3 memes per row on large screens
+
         memeDiv.innerHTML = `
-            <h3>${meme.title}</h3>
-            <img src="${meme.imageUrl}" alt="${meme.title}">
-            <p>${meme.description}</p>
-            <p>Votes: ${meme.votes}</p>
-            <button onclick="voteMeme('${meme._id}')">Vote</button>
+            <div class="card">
+                <div class="card-image">
+                    <img src="${meme.imageUrl}" alt="${meme.title}">
+                </div>
+                <div class="card-content">
+                    <span class="card-title">${meme.title}</span>
+                    <p>${meme.description}</p>
+                    <p><strong>Votes:</strong> ${meme.votes}</p>
+                </div>
+                <div class="card-action">
+                    <button class="btn blue waves-effect waves-light" onclick="voteMeme('${meme._id}')">Vote</button>
+                </div>
+            </div>
         `;
+
         battleContainer.appendChild(memeDiv);
     });
 }
